@@ -1,0 +1,26 @@
+import pandas as pd
+
+def selectData(students: pd.DataFrame) -> pd.DataFrame:
+    return students.loc[students['student_id'] == 101, ['name', 'age']]
+
+"""
+Import pandas:
+
+import pandas as pd
+This line imports the pandas library, which is used for data manipulation and analysis in Python.
+Define the function:
+
+def selectData(students: pd.DataFrame) -> pd.DataFrame:
+The function selectData is defined with one parameter students. The type hint suggests that students should be a pandas DataFrame.
+The function returns a pandas DataFrame, as indicated by the type hint -> pd.DataFrame.
+Filter and Select Data:
+
+return students.loc[students["student_id"] == 101, ["name", "age"]]
+The loc accessor is used to filter and select data based on label indexing.
+students["student_id"] == 101 creates a boolean mask where the condition is true for rows where student_id is 101.
+students.loc[students["student_id"] == 101, ["name", "age"]] filters the DataFrame to include only the rows where student_id is 101 and selects only the name and age columns.
+Summary:
+The function takes a pandas DataFrame and returns a new DataFrame filtered by student_id equal to 101.
+It selects only the name and age columns for the filtered rows.
+The loc accessor is used for label-based indexing to filter and select the data.
+"""
