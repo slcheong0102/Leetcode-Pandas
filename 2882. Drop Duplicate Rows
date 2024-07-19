@@ -1,0 +1,18 @@
+"""
+Solution 1: duplicated function
+"""
+import pandas as pd
+
+def dropDuplicateEmails(customers: pd.DataFrame) -> pd.DataFrame:
+    duplicates = customers['email'].duplicated(keep='first')
+    return customers[~duplicates]
+
+
+
+"""
+Solution 2: .drop_duplicates(subset='email')
+"""
+import pandas as pd
+
+def dropDuplicateEmails(customers: pd.DataFrame) -> pd.DataFrame:
+    return customers.drop_duplicates(subset='email')
